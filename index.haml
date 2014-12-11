@@ -20,12 +20,11 @@
 			
 		%ol #content{id: "content"}
 			{block:Posts}
-		
-			{block:Text}
-		  %li{block:Title}
-		    %h2
-		      %a{href: "{Permalink}"} {Title}
-		  {/block:Title}
+				{block:Text}
+				%li{block:Title}
+					%h2
+						%a{href: "{Permalink}"} {Title}
+				{/block:Title}
 			
 			%li{body}
 				{block:post}

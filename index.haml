@@ -1,50 +1,51 @@
 %html
-%head
-	%title{title}
-	%meta{charset: "utf-8"}
-	%meta{name: "viewport" content: "width=device-width, inital-scale=1"}
-	%link{rel: "stylesheet", media: "screen", href: "screen.css"}
+	%head
+		%title{title}
+		%meta{charset: "utf-8"}
+		%meta{name: "viewport" content: "width=device-width, inital-scale=1"}
+		%link{rel: "stylesheet", media: "screen", href: "screen.css"}
+		%link{href: "http://fonts.googleapis.com/css?family=Istok+Web:, rel:"stylesheet" type: "text/css"}
   %body
-	%div{id: "header"}
-	  %h1 {blog-title}
-	  %h2 {blog-description}
-	  %div#nav
-		%ul
-		  %li
-			%a{href: "archive"} Archive
-		  %li	
-			%a{href: "previous"} {block:PreviousPage} Previous Page
-		  %li	
-			%a{href: "next"} {block:NextPage} Next Page
+		%div{id: "header"}
+			%h1 {blog-title}
+			%h2 {blog-description}
+		%div#nav
+			%ul
+				%li
+					%a{href: "archive"} Archive
+				%li	
+					%a{href: "previous"} {block:PreviousPage} Previous Page
+				%li	
+					%a{href: "next"} {block:NextPage} Next Page
 			
-	  %ol #content{id: "content"}
-	  {block:Posts}
+		%ol #content{id: "content"}
+			{block:Posts}
 		
-		{block:Text}
+			{block:Text}
 		  %li{block:Title}
 		    %h2
 		      %a{href: "{Permalink}"} {Title}
 		  {/block:Title}
 			
-			{body}
-			{block:post}
-			%p.post
-			  %a{href: "{Permalink}"} Read post
-			{/block:post}
+			%li{body}
+				{block:post}
+				%p.post
+					%a{href: "{Permalink}"} Read post
+				{/block:post}
 				
-			%footer
-				{block:Date}
-				%a{href: "{Permalink}"} Posted on the {DayofMonth} {Month}, {Year}
-				{/block:Date}
-		{/block:Text}
+		%footer
+			{block:Date}
+			%a{href: "{Permalink}"} Posted on the {DayofMonth} {Month}, {Year}
+			{/block:Date}
+			{/block:Text}
 		
-		{block:Photo}
 		%div#photo
-		  %img src="{PhotoURL-500}" alt="{PhotoAlt}"
-			%p{block:Caption}{Caption}{/block:Caption}
-		{/block:Photo}
+			{block:Photo}
+				%img src="{PhotoURL-500}" alt="{PhotoAlt}"
+				%p{block:Caption}{Caption}{/block:Caption}
+			{/block:Photo}
 			
-		{/block:Posts}
+			{/block:Posts}
 			
 		%div#footer
 			%div#copyright
